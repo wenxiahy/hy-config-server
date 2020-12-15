@@ -1,0 +1,33 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: hy-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:wenxiahy/config-test.git
+          search-paths: '{application}'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.75.199.218:8000/eureka/
+
+---
+### 生产环境配置
+server:
+  port: 8888
+spring:
+  application:
+    name: hy-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:wenxiahy/config-prod.git
+          search-paths: '{application}'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://hy-eureka-server-1:8761/eureka/,http://hy-eureka-server-2:8761/eureka/
