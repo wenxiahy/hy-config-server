@@ -12,7 +12,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://47.75.199.218:8000/eureka/
+      defaultZone: http://localhost:8000/eureka/
 
 ---
 ### 生产环境配置
